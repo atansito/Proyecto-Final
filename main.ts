@@ -74,9 +74,10 @@ Principal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-Principal.setPosition(20, 150)
-scene.cameraFollowSprite(Principal)
 controller.moveSprite(Principal)
+Principal.setStayInScreen(true)
+scene.cameraFollowSprite(Principal)
+tiles.setCurrentTilemap(tilemap`Nivel 1`)
 Principal.ay += 150
 animation.runImageAnimation(
 Principal,
@@ -89,4 +90,4 @@ Quieto_Derecho_4
 200,
 true
 )
-tiles.setCurrentTilemap(tilemap`Nivel 1`)
+Principal.setPosition(20, 150)
