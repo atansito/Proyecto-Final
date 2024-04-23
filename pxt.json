@@ -1,0 +1,28 @@
+{
+    "name": "Proyecto Final",
+    "description": "",
+    "dependencies": {
+        "device": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "Quieto_Derecho_1.ts",
+        "Quieto_Derecho_2.ts",
+        "Quieto_Derecho_3.ts",
+        "Quieto_Derecho_4.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.12.51",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj"
+}
