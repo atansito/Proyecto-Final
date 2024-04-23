@@ -12,7 +12,9 @@
         "Quieto_Derecho_1.ts",
         "Quieto_Derecho_2.ts",
         "Quieto_Derecho_3.ts",
-        "Quieto_Derecho_4.ts"
+        "Quieto_Derecho_4.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"

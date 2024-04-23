@@ -1,4 +1,4 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="y{C~IZ72^qYs9BI,KT6+">Principal</variable></variables><block type="pxt-on-start" id="jx)w%.S%]okUl:ux:[{F" x="30" y="10"><statement name="HANDLER"><block type="run_image_animation" id="q.CTNmOn(icC_`7T|u3#"><value name="sprite"><block type="variables_get" id="S?#%E3l!R8;KP!4ax3[*"><field name="VAR" id="y{C~IZ72^qYs9BI,KT6+">Principal</field></block></value><value name="frames"><block type="animation_editor" id="T/o:_b[OMt=ov[Mk?B++"><field name="frames">[img`
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="tZ.j9IuO![pvl14Y~WI;">Player</variable><variable type="KIND_SpriteKind" id=":@F)XW:B^@|.Qwg!U@00">Projectile</variable><variable type="KIND_SpriteKind" id="KQtklI(f$CAIlZjX{?|N">Food</variable><variable type="KIND_SpriteKind" id="{}DSGLC4*gAG(=$37#Dn">Enemy</variable><variable id="Gf:DJLB:t-bk{Cxo1f3h">Principal</variable></variables><block type="pxt-on-start" id="P,*|+*}0}zgQv`@kCZ8~" x="50" y="10"><statement name="HANDLER"><block type="variables_set" id="YSm`vMTK1W8sMFI9[XCw"><field name="VAR" id="Gf:DJLB:t-bk{Cxo1f3h">Principal</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="xj9^HfO42z@XG[+(2=}Q"><value name="img"><shadow type="screen_image_picker" id="(VHBW,li%kWt)QkWBJgV"><field name="img">img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -15,55 +15,4 @@
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`]</field><data>{"commentRefs":[],"fieldData":{"frames":"T/o:_b[OMt=ov[Mk?B++"}}</data></block></value><value name="frameInterval"><shadow type="timePicker" id="|cifK}l;04xb#h~2#9:B"><field name="ms">200</field></shadow></value><value name="loop"><shadow type="toggleOnOff" id="2X@a~GYji@/qnPC_Yv#~"><field name="on">true</field></shadow></value></block></statement></block></xml>
+`</field><data>{"commentRefs":[],"fieldData":{"img":"(VHBW,li%kWt)QkWBJgV"}}</data></shadow></value><value name="kind"><shadow type="spritekind" id="Xu[gAv9c+fYi~yO)namJ"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="spritesetpos" id="a6=nw,H4qeA[}Zc4CEz#"><value name="sprite"><block type="variables_get" id="8yMeN4f.Hg4$@/3@C6_|"><field name="VAR" id="Gf:DJLB:t-bk{Cxo1f3h">Principal</field></block></value><value name="x"><shadow type="positionPicker" id="Q]:hlG[k(c8lh_m(%uKD"><field name="index">20</field></shadow></value><value name="y"><shadow type="positionPicker" id="{+i*oi5o]oPJ;;Wa,pcH"><field name="index">150</field></shadow></value><next><block type="camerafollow" id="0E0_LorTn5#YF/E9;ozb"><value name="sprite"><block type="variables_get" id="/TNh8SC!pTb/4m:gh28+"><field name="VAR" id="Gf:DJLB:t-bk{Cxo1f3h">Principal</field></block></value><next><block type="run_image_animation" id="bRH6#eyb4s[vd5qgX[!Q"><value name="sprite"><block type="variables_get" id="2+z]1.{V7+2r/uLX-/4W"><field name="VAR" id="Gf:DJLB:t-bk{Cxo1f3h">Principal</field></block></value><value name="frames"><shadow type="animation_editor"></shadow><block type="lists_create_with" id="BaiuF%8/,.uZjP@y}*S9" inline="false"><mutation items="4" horizontalafter="3"></mutation><value name="ADD0"><block type="typescript_expression" id="R)qVw1tFx_FM9ku=4(Mk" editable="false"><field name="EXPRESSION">Quieto_Derecho_1</field></block></value><value name="ADD1"><block type="typescript_expression" id="dE|X7Th-BK4y5W7vlk%h" editable="false"><field name="EXPRESSION">Quieto_Derecho_2</field></block></value><value name="ADD2"><block type="typescript_expression" id="/@j3*Y#JAC{*hUIpi6Cn" editable="false"><field name="EXPRESSION">Quieto_Derecho_3</field></block></value><value name="ADD3"><block type="typescript_expression" id="]J@L,-hA$kvF?G_Mnt~$" editable="false"><field name="EXPRESSION">Quieto_Derecho_4</field></block></value></block></value><value name="frameInterval"><shadow type="timePicker" id="KS/w]7,EAPNk1*K3MPO0"><field name="ms">200</field></shadow></value><value name="loop"><shadow type="toggleOnOff" id="ty}+?n8#}cH:Qx98{5@Q"><field name="on">true</field></shadow></value><next><block type="set_current_tilemap" id="_F8Vwqf=jXBR54-{m[Yn"><value name="tilemap"><shadow type="tiles_tilemap_editor" id="4oZ@{-bX!}oRZUQI!U7J"><field name="tilemap">tilemap`Nivel 1`</field><data>{"commentRefs":[],"fieldData":{"tilemap":"level2"}}</data></shadow></value></block></next></block></next></block></next></block></next></block></statement></block></xml>
