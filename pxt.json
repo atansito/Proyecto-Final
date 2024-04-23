@@ -14,7 +14,11 @@
         "Quieto_Derecho_3.ts",
         "Quieto_Derecho_4.ts",
         "tilemap.g.jres",
-        "tilemap.g.ts"
+        "tilemap.g.ts",
+        "Movimiento_Derecha_1.ts",
+        "Movimiento_Derecha_2.ts",
+        "Movimiento_Derecha_3.ts",
+        "Movimiento_Derecha_4.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -26,5 +30,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
