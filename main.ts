@@ -90,4 +90,4 @@ Quieto_Derecho_4
 200,
 true
 )
-Principal.setPosition(20, 150)
+Principal.setPosition(20, 140)
