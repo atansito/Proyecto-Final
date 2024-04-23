@@ -1,6 +1,6 @@
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
-        Principal.setVelocity(0, -150)
+        Principal.vy = -150
     }
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -78,7 +78,7 @@ controller.moveSprite(Principal)
 Principal.setStayInScreen(true)
 scene.cameraFollowSprite(Principal)
 tiles.setCurrentTilemap(tilemap`Nivel 1`)
-Principal.ay += 150
+Principal.ay = 300
 animation.runImageAnimation(
 Principal,
 [
@@ -90,4 +90,6 @@ Quieto_Derecho_4
 200,
 true
 )
-Principal.setPosition(20, 140)
+Principal.setPosition(20, 120)
+info.setLife(3)
+info.setScore(0)
