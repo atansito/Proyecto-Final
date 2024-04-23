@@ -74,7 +74,7 @@ Principal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(Principal)
+controller.moveSprite(Principal, 100, 0)
 Principal.setStayInScreen(true)
 scene.cameraFollowSprite(Principal)
 tiles.setCurrentTilemap(tilemap`Nivel 1`)
