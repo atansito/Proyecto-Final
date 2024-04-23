@@ -1,6 +1,20 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
         Principal.vy = -150
+        animation.runImageAnimation(
+        Principal,
+        [
+        Salto_Derecha_1,
+        Salto_Derecha_2,
+        Salto_Derecha_3,
+        Salto_Derecha_4,
+        Salto_Derecha_4,
+        Salto_Derecha_4,
+        Salto_Derecha_5
+        ],
+        200,
+        false
+        )
     }
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {

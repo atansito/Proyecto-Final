@@ -34,7 +34,12 @@
         "Salto_Izquierdo_2.ts",
         "Salto_Izquierdo_3.ts",
         "Salto_Izquierdo_4.ts",
-        "Salto_Izquierdo_5.ts"
+        "Salto_Izquierdo_5.ts",
+        "Salto_Derecha_1.ts",
+        "Salto_Derecha_2.ts",
+        "Salto_Derecha_3.ts",
+        "Salto_Derecha_4.ts",
+        "Salto_Derecha_5.ts"
     ],
     "testFiles": [
         "test.ts"
