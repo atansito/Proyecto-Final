@@ -1,3 +1,8 @@
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (Principal.isHittingTile(CollisionDirection.Bottom)) {
+        Principal.setVelocity(0, -150)
+    }
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Principal,
@@ -31,7 +36,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     Quieto_Izquierdo_1,
     Quieto_Izquierdo_2,
     Quieto_Izquierdo_3,
-    Quieto_Izquierdo_4,
+    Quieto_Izquierdo_4
     ],
     200,
     true
@@ -72,7 +77,7 @@ Principal = sprites.create(img`
 Principal.setPosition(20, 150)
 scene.cameraFollowSprite(Principal)
 controller.moveSprite(Principal)
-Principal.ay += 300
+Principal.ay += 150
 animation.runImageAnimation(
 Principal,
 [

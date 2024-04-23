@@ -26,7 +26,12 @@
         "Quieto_Izquierdo_1.ts",
         "Quieto_Izquierdo_2.ts",
         "Quieto_Izquierdo_3.ts",
-        "Quieto_Izquierdo_4.ts"
+        "Quieto_Izquierdo_4.ts",
+        "Salto_Izquierdo_1.ts",
+        "Salto_Izquierdo_2.ts",
+        "Salto_Izquierdo_3.ts",
+        "Salto_Izquierdo_4.ts",
+        "Salto_Izquierdo_5.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -38,5 +43,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "blocksprj"
 }
