@@ -18,7 +18,15 @@
         "Movimiento_Derecha_1.ts",
         "Movimiento_Derecha_2.ts",
         "Movimiento_Derecha_3.ts",
-        "Movimiento_Derecha_4.ts"
+        "Movimiento_Derecha_4.ts",
+        "Movimiento_Izquierdo_1.ts",
+        "Movimiento_Izquierdo_2.ts",
+        "Movimiento_Izquierdo_3.ts",
+        "Movimiento_Izquierdo_4.ts",
+        "Quieto_Izquierdo_1.ts",
+        "Quieto_Izquierdo_2.ts",
+        "Quieto_Izquierdo_3.ts",
+        "Quieto_Izquierdo_4.ts"
     ],
     "testFiles": [
         "test.ts"
