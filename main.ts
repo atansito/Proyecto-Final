@@ -3,10 +3,6 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         Principal.vy = -150
     }
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
-    info.changeLifeBy(-1)
-    Principal.setPosition(20, 120)
-})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Principal,
