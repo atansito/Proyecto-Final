@@ -17,6 +17,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         )
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
+    info.changeLifeBy(-1)
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Principal,
@@ -55,6 +58,10 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     200,
     true
     )
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level8`)
+    Principal.setPosition(20, 120)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
