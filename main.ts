@@ -1,21 +1,11 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
         Principal.vy = -150
-        animation.runImageAnimation(
-        Principal,
-        [
-        Salto_Derecha_1,
-        Salto_Derecha_2,
-        Salto_Derecha_3,
-        Salto_Derecha_4,
-        Salto_Derecha_4,
-        Salto_Derecha_4,
-        Salto_Derecha_5
-        ],
-        200,
-        false
-        )
     }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
+    info.changeLifeBy(-1)
+    Principal.setPosition(20, 120)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -56,6 +46,10 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     true
     )
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level8`)
+    Principal.setPosition(20, 120)
+})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Principal,
@@ -88,6 +82,24 @@ Principal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+let Slime_Verde = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Enemy)
 controller.moveSprite(Principal, 100, 0)
 Principal.setStayInScreen(true)
 scene.cameraFollowSprite(Principal)
