@@ -63,6 +63,11 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_01)
+    info.changeScoreBy(1)
+})
+let Moneda_01: Sprite = null
 let Principal: Sprite = null
 Principal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
@@ -100,6 +105,24 @@ let Slime_Verde = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Enemy)
+Moneda_01 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Food)
 controller.moveSprite(Principal, 100, 0)
 Principal.setStayInScreen(true)
 scene.cameraFollowSprite(Principal)
@@ -119,3 +142,15 @@ true
 Principal.setPosition(20, 120)
 info.setLife(3)
 info.setScore(0)
+animation.runImageAnimation(
+Moneda_01,
+[
+Moneda_1,
+Moneda_2,
+Moneda_3,
+Moneda_4
+],
+100,
+true
+)
+Moneda_01.setPosition(60, 165)
