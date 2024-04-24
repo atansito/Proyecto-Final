@@ -39,7 +39,11 @@
         "Salto_Derecha_2.ts",
         "Salto_Derecha_3.ts",
         "Salto_Derecha_4.ts",
-        "Salto_Derecha_5.ts"
+        "Salto_Derecha_5.ts",
+        "Moneda_1.ts",
+        "Moneda_2.ts",
+        "Moneda_3.ts",
+        "Moneda_4.ts"
     ],
     "testFiles": [
         "test.ts"
