@@ -8,6 +8,7 @@ namespace SpriteKind {
     export const Moneda_7 = SpriteKind.create()
     export const Moneda_8 = SpriteKind.create()
     export const Moneda_9 = SpriteKind.create()
+    export const Esqueleto_1 = SpriteKind.create()
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
@@ -89,6 +90,20 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     true
     )
 })
+scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Izquierda`, function (sprite, location) {
+    animation.runImageAnimation(
+    Esqueleto,
+    [
+    Esqueleto_Derecha_1,
+    Esqueleto_Derecha_2,
+    Esqueleto_Derecha_3,
+    Esqueleto_Derecha_4
+    ],
+    200,
+    true
+    )
+    Esqueleto.setVelocity(-100, 0)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     if (Llave == true) {
         tiles.setCurrentTilemap(tilemap`level8`)
@@ -133,6 +148,20 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_8, function (sprite, othe
     sprites.destroy(Moneda_08)
     info.changeScoreBy(1)
 })
+scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (sprite, location) {
+    animation.runImageAnimation(
+    Esqueleto,
+    [
+    Esqueleto_Derecha_1,
+    Esqueleto_Derecha_2,
+    Esqueleto_Derecha_3,
+    Esqueleto_Derecha_4
+    ],
+    200,
+    true
+    )
+    Esqueleto.setVelocity(100, 0)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, otherSprite) {
     sprites.destroy(Moneda_06)
     info.changeScoreBy(1)
@@ -146,6 +175,7 @@ let Moneda_04: Sprite = null
 let Moneda_03: Sprite = null
 let Moneda_02: Sprite = null
 let Moneda_01: Sprite = null
+let Esqueleto: Sprite = null
 let Principal: Sprite = null
 let Respuestas: string[] = []
 let Llave = false
@@ -177,7 +207,7 @@ Principal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-let Slime_Verde = sprites.create(img`
+Esqueleto = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -194,11 +224,26 @@ let Slime_Verde = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Enemy)
+    `, SpriteKind.Esqueleto_1)
+Esqueleto.setPosition(397, 50)
+Esqueleto.setVelocity(100, 0)
+animation.runImageAnimation(
+Esqueleto,
+[
+Esqueleto_Derecha_1,
+Esqueleto_Derecha_2,
+Esqueleto_Derecha_3,
+Esqueleto_Derecha_4
+],
+200,
+true
+)
 controller.moveSprite(Principal, 100, 0)
 Principal.setStayInScreen(true)
 scene.cameraFollowSprite(Principal)
+scene.setBackgroundImage(Fondo_1)
 tiles.setCurrentTilemap(tilemap`Nivel 1`)
+scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.OnlyHorizontal)
 Principal.ay = 300
 animation.runImageAnimation(
 Principal,
