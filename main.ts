@@ -14,6 +14,32 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         Principal.vy = -200
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (sprite, location) {
+    game.showLongText("Para que sirve la funcion IF en Python?", DialogLayout.Bottom)
+    game.showLongText("1) Para ingresar numeros", DialogLayout.Bottom)
+    game.showLongText("2) Para ingresar texto", DialogLayout.Bottom)
+    game.showLongText("3) Para crear condiciones", DialogLayout.Bottom)
+    game.showLongText("4) Para crear ciclos", DialogLayout.Bottom)
+    if (game.askForNumber("", 1) != 3) {
+        game.showLongText("Lo siento! Respuesta incorrecta, menos una vida >:)", DialogLayout.Bottom)
+        info.changeLifeBy(-1)
+    } else {
+        game.showLongText("Felicidades! Respuesta correcta", DialogLayout.Bottom)
+        Principal.sayText(Respuestas._pickRandom())
+    }
+    Principal.setPosition(427, 54)
+    animation.runImageAnimation(
+    Principal,
+    [
+    Quieto_Derecho_1,
+    Quieto_Derecho_2,
+    Quieto_Derecho_3,
+    Quieto_Derecho_4
+    ],
+    200,
+    true
+    )
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_3, function (sprite, otherSprite) {
     sprites.destroy(Moneda_03)
     info.changeScoreBy(1)
@@ -116,6 +142,16 @@ let Moneda_03: Sprite = null
 let Moneda_02: Sprite = null
 let Moneda_01: Sprite = null
 let Principal: Sprite = null
+let Respuestas: string[] = []
+Respuestas = [
+"¡Oh, acerté! ¿Algún desafío real después de esto?",
+"¿Correcto? ¡Por supuesto! ¿Qué esperabas?",
+"¿Y qué esperabas? Soy el héroe, después de todo.",
+"¡Exacto! Como si hubiera alguna duda.",
+"¡Sorpresa, sorpresa! ¿Qué premio gané esta vez?",
+"¡Fácil! ¿Habrá algo que me ponga a prueba?",
+"¡Sí! ¿Hay algún desafío real por aquí?"
+]
 Principal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
