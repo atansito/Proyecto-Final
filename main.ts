@@ -23,11 +23,13 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (
     if (game.askForNumber("", 1) != 3) {
         game.showLongText("Lo siento! Respuesta incorrecta, menos una vida >:)", DialogLayout.Bottom)
         info.changeLifeBy(-1)
+        Principal.setPosition(427, 54)
     } else {
         game.showLongText("Felicidades! Respuesta correcta", DialogLayout.Bottom)
-        Principal.sayText(Respuestas._pickRandom())
+        Principal.sayText(Respuestas._pickRandom(), 5000, true)
+        Llave = true
+        tiles.setTileAt(location, assets.tile`transparency16`)
     }
-    Principal.setPosition(427, 54)
     animation.runImageAnimation(
     Principal,
     [
@@ -88,8 +90,11 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     )
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level8`)
-    Principal.setPosition(20, 120)
+    if (Llave == true) {
+        tiles.setCurrentTilemap(tilemap`level8`)
+        Principal.setPosition(20, 120)
+        Llave = false
+    }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -143,6 +148,8 @@ let Moneda_02: Sprite = null
 let Moneda_01: Sprite = null
 let Principal: Sprite = null
 let Respuestas: string[] = []
+let Llave = false
+Llave = false
 Respuestas = [
 "¡Oh, acerté! ¿Algún desafío real después de esto?",
 "¿Correcto? ¡Por supuesto! ¿Qué esperabas?",
