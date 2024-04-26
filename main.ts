@@ -99,7 +99,7 @@ scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Izquierda`, function (sp
     Esqueleto_Derecha_3,
     Esqueleto_Derecha_4
     ],
-    200,
+    500,
     true
     )
     Esqueleto.setVelocity(-100, 0)
@@ -157,7 +157,7 @@ scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (spr
     Esqueleto_Derecha_3,
     Esqueleto_Derecha_4
     ],
-    200,
+    500,
     true
     )
     Esqueleto.setVelocity(100, 0)
