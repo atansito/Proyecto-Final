@@ -196,10 +196,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, othe
     sprites.destroy(Moneda_06)
     info.changeScoreBy(1)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeLifeBy(-1)
-    Principal.setPosition(20, 130)
-})
 let Moneda_09: Sprite = null
 let Moneda_08: Sprite = null
 let Moneda_07: Sprite = null
@@ -354,7 +350,7 @@ Moneda_4
 100,
 true
 )
-Moneda_01.setPosition(376, 120)
+Moneda_01.setPosition(380, 120)
 Moneda_02 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -384,7 +380,7 @@ Moneda_4
 100,
 true
 )
-Moneda_02.setPosition(406, 120)
+Moneda_02.setPosition(410, 120)
 Moneda_03 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -414,7 +410,7 @@ Moneda_4
 100,
 true
 )
-Moneda_03.setPosition(436, 120)
+Moneda_03.setPosition(440, 120)
 Moneda_04 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
