@@ -9,7 +9,22 @@ namespace SpriteKind {
     export const Moneda_8 = SpriteKind.create()
     export const Moneda_9 = SpriteKind.create()
     export const Esqueleto_1 = SpriteKind.create()
+    export const Esqueleto_2 = SpriteKind.create()
 }
+scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Izquierda`, function (sprite, location) {
+    animation.runImageAnimation(
+    Esqueleto_2,
+    [
+    Esqueleto_Izquierda_1,
+    Esqueleto_Izquierda_2,
+    Esqueleto_Izquierda_3,
+    Esqueleto_Izquierda_4
+    ],
+    200,
+    true
+    )
+    Esqueleto_2.setVelocity(-50, 0)
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
         Principal.vy = -200
@@ -30,6 +45,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (
         Principal.sayText(Respuestas._pickRandom(), 5000, true)
         Llave = true
         tiles.setTileAt(location, assets.tile`transparency16`)
+        tiles.setTileAt(tiles.getTileLocation(39, 10), sprites.dungeon.chestOpen)
     }
     animation.runImageAnimation(
     Principal,
@@ -64,14 +80,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_7, function (sprite, othe
     sprites.destroy(Moneda_07)
     info.changeScoreBy(1)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
-    if (true) {
-        let mySprite: Sprite = null
-        sprites.destroy(mySprite)
-    }
-    info.changeLifeBy(-1)
-    Principal.setPosition(20, 120)
-})
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     animation.runImageAnimation(
     Principal,
@@ -100,24 +108,17 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Izquierda`, function (sprite, location) {
     animation.runImageAnimation(
-    Esqueleto,
+    Esqueleto_1,
     [
     Esqueleto_Izquierda_1,
     Esqueleto_Izquierda_2,
     Esqueleto_Izquierda_3,
     Esqueleto_Izquierda_4
     ],
-    100,
+    200,
     true
     )
-    Esqueleto.setVelocity(-50, 0)
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
-    if (Llave == true) {
-        tiles.setCurrentTilemap(tilemap`level8`)
-        Principal.setPosition(20, 120)
-        Llave = false
-    }
+    Esqueleto_1.setVelocity(-50, 0)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -152,27 +153,52 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_2, function (sprite, othe
     sprites.destroy(Moneda_02)
     info.changeScoreBy(1)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_8, function (sprite, otherSprite) {
-    sprites.destroy(Moneda_08)
-    info.changeScoreBy(1)
-})
-scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
-    Esqueleto,
+    Esqueleto_2,
     [
     Esqueleto_Derecha_1,
     Esqueleto_Derecha_2,
     Esqueleto_Derecha_3,
     Esqueleto_Derecha_4
     ],
-    100,
+    200,
     true
     )
-    Esqueleto.setVelocity(50, 0)
+    Esqueleto_2.setVelocity(50, 0)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_8, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_08)
+    info.changeScoreBy(1)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (sprite, location) {
+    if (Llave == true) {
+        tiles.setCurrentTilemap(tilemap`level8`)
+        Principal.setPosition(20, 120)
+        Llave = false
+    }
+})
+scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (sprite, location) {
+    animation.runImageAnimation(
+    Esqueleto_1,
+    [
+    Esqueleto_Derecha_1,
+    Esqueleto_Derecha_2,
+    Esqueleto_Derecha_3,
+    Esqueleto_Derecha_4
+    ],
+    200,
+    true
+    )
+    Esqueleto_1.setVelocity(50, 0)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, otherSprite) {
     sprites.destroy(Moneda_06)
     info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    Principal.setPosition(20, 130)
 })
 let Moneda_09: Sprite = null
 let Moneda_08: Sprite = null
@@ -183,7 +209,8 @@ let Moneda_04: Sprite = null
 let Moneda_03: Sprite = null
 let Moneda_02: Sprite = null
 let Moneda_01: Sprite = null
-let Esqueleto: Sprite = null
+let Esqueleto_2: Sprite = null
+let Esqueleto_1: Sprite = null
 let Principal: Sprite = null
 let Respuestas: string[] = []
 let Llave = false
@@ -215,7 +242,7 @@ Principal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-Esqueleto = sprites.create(img`
+Esqueleto_1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -233,10 +260,41 @@ Esqueleto = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Esqueleto_1)
-Esqueleto.setPosition(397, 50)
-Esqueleto.setVelocity(100, 0)
+Esqueleto_2 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Esqueleto_2)
+Esqueleto_1.setPosition(420, 163)
+Esqueleto_1.setVelocity(100, 0)
+Esqueleto_2.setPosition(170, 163)
+Esqueleto_2.setVelocity(100, 0)
 animation.runImageAnimation(
-Esqueleto,
+Esqueleto_1,
+[
+Esqueleto_Derecha_1,
+Esqueleto_Derecha_2,
+Esqueleto_Derecha_3,
+Esqueleto_Derecha_4
+],
+200,
+true
+)
+animation.runImageAnimation(
+Esqueleto_2,
 [
 Esqueleto_Derecha_1,
 Esqueleto_Derecha_2,
@@ -264,7 +322,7 @@ Quieto_Derecho_4
 200,
 true
 )
-Principal.setPosition(20, 180)
+Principal.setPosition(20, 130)
 info.setLife(3)
 info.setScore(0)
 Moneda_01 = sprites.create(img`
@@ -296,7 +354,7 @@ Moneda_4
 100,
 true
 )
-Moneda_01.setPosition(364, 150)
+Moneda_01.setPosition(376, 120)
 Moneda_02 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -326,7 +384,7 @@ Moneda_4
 100,
 true
 )
-Moneda_02.setPosition(394, 150)
+Moneda_02.setPosition(406, 120)
 Moneda_03 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -356,7 +414,7 @@ Moneda_4
 100,
 true
 )
-Moneda_03.setPosition(424, 150)
+Moneda_03.setPosition(436, 120)
 Moneda_04 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -386,7 +444,7 @@ Moneda_4
 100,
 true
 )
-Moneda_04.setPosition(204, 102)
+Moneda_04.setPosition(204, 88)
 Moneda_05 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -416,7 +474,7 @@ Moneda_4
 100,
 true
 )
-Moneda_05.setPosition(234, 102)
+Moneda_05.setPosition(234, 88)
 Moneda_06 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -446,7 +504,7 @@ Moneda_4
 100,
 true
 )
-Moneda_06.setPosition(264, 102)
+Moneda_06.setPosition(264, 88)
 Moneda_07 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -476,7 +534,7 @@ Moneda_4
 100,
 true
 )
-Moneda_07.setPosition(397, 54)
+Moneda_07.setPosition(397, 40)
 Moneda_08 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -506,7 +564,7 @@ Moneda_4
 100,
 true
 )
-Moneda_08.setPosition(427, 54)
+Moneda_08.setPosition(427, 40)
 Moneda_09 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -536,4 +594,4 @@ Moneda_4
 100,
 true
 )
-Moneda_09.setPosition(457, 54)
+Moneda_09.setPosition(457, 40)
