@@ -49,7 +49,11 @@
         "Esqueleto_Derecha_2.ts",
         "Esqueleto_Derecha_3.ts",
         "Esqueleto_Derecha_4.ts",
-        "Fondo_1.ts"
+        "Fondo_1.ts",
+        "Esqueleto_Izquierda_1.ts",
+        "Esqueleto_Izquierda_2.ts",
+        "Esqueleto_Izquierda_3.ts",
+        "Esqueleto_Izquierda_4.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -61,5 +65,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }

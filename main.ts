@@ -64,6 +64,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_7, function (sprite, othe
     sprites.destroy(Moneda_07)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
+    if (true) {
+        let mySprite: Sprite = null
+        sprites.destroy(mySprite)
+    }
+    info.changeLifeBy(-1)
+    Principal.setPosition(20, 120)
+})
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     animation.runImageAnimation(
     Principal,
@@ -94,15 +102,15 @@ scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Izquierda`, function (sp
     animation.runImageAnimation(
     Esqueleto,
     [
-    Esqueleto_Derecha_1,
-    Esqueleto_Derecha_2,
-    Esqueleto_Derecha_3,
-    Esqueleto_Derecha_4
+    Esqueleto_Izquierda_1,
+    Esqueleto_Izquierda_2,
+    Esqueleto_Izquierda_3,
+    Esqueleto_Izquierda_4
     ],
-    500,
+    100,
     true
     )
-    Esqueleto.setVelocity(-100, 0)
+    Esqueleto.setVelocity(-50, 0)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     if (Llave == true) {
@@ -157,10 +165,10 @@ scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (spr
     Esqueleto_Derecha_3,
     Esqueleto_Derecha_4
     ],
-    500,
+    100,
     true
     )
-    Esqueleto.setVelocity(100, 0)
+    Esqueleto.setVelocity(50, 0)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, otherSprite) {
     sprites.destroy(Moneda_06)
