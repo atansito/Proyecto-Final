@@ -53,7 +53,11 @@
         "Esqueleto_Izquierda_1.ts",
         "Esqueleto_Izquierda_2.ts",
         "Esqueleto_Izquierda_3.ts",
-        "Esqueleto_Izquierda_4.ts"
+        "Esqueleto_Izquierda_4.ts",
+        "Ojo_Derecha_1.ts",
+        "Ojo_Derecha_2.ts",
+        "Ojo_Derecha_3.ts",
+        "Ojo_Derecha_4.ts"
     ],
     "testFiles": [
         "test.ts"
