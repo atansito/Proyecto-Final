@@ -26,6 +26,10 @@ scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Izquierda`, function (sp
     )
     Esqueleto_2.setVelocity(-50, 0)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
+    sprites.destroy(Esqueleto_1)
+    info.changeScoreBy(10)
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
         Principal.vy = -200
@@ -34,6 +38,26 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . 4 4 4 4 4 . . . . . . 
+        . . . 4 4 4 5 5 5 d 4 4 4 4 . . 
+        . . 4 d 5 d 5 5 5 d d d 4 4 . . 
+        . . 4 5 5 1 1 1 d d 5 5 5 4 . . 
+        . 4 5 5 5 1 1 1 5 1 1 5 5 4 4 . 
+        . 4 d d 1 1 5 5 5 1 1 5 5 d 4 . 
+        . 4 5 5 1 1 5 1 1 5 5 d d d 4 . 
+        . 2 5 5 5 d 1 1 1 5 1 1 5 5 2 . 
+        . 2 d 5 5 d 1 1 1 5 1 1 5 5 2 . 
+        . . 2 4 d d 5 5 5 5 d d 5 4 . . 
+        . . . 2 2 4 d 5 5 d d 4 4 . . . 
+        . . 2 2 2 2 2 4 4 4 2 2 2 . . . 
+        . . . 2 2 4 4 4 4 4 4 2 2 . . . 
+        . . . . . 2 2 2 2 2 2 . . . . . 
+        `, Principal, 150, 0)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (sprite, location) {
     game.showLongText("Para que sirve la funcion IF en Python?", DialogLayout.Bottom)
@@ -63,6 +87,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (
     200,
     true
     )
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_3, function (sprite, otherSprite) {
+    sprites.destroy(Esqueleto_3)
+    info.changeScoreBy(10)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_3, function (sprite, otherSprite) {
     sprites.destroy(Moneda_03)
@@ -253,6 +281,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, othe
     sprites.destroy(Moneda_06)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_2, function (sprite, otherSprite) {
+    sprites.destroy(Esqueleto_2)
+    info.changeScoreBy(10)
+})
+let projectile: Sprite = null
 let Moneda_09: Sprite = null
 let Moneda_08: Sprite = null
 let Moneda_07: Sprite = null
