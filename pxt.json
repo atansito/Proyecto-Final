@@ -57,7 +57,13 @@
         "Ojo_Derecha_1.ts",
         "Ojo_Derecha_2.ts",
         "Ojo_Derecha_3.ts",
-        "Ojo_Derecha_4.ts"
+        "Ojo_Derecha_4.ts",
+        "Ojo_Izquierdo_1.ts",
+        "Ojo_Izquierda_2.ts",
+        "Ojo_Izquierda_3.ts",
+        "Ojo_Izquierda_4.ts",
+        "Disparo_1.ts",
+        "Disparo_2.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -69,5 +75,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }

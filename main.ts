@@ -16,6 +16,20 @@ namespace SpriteKind {
     export const Ojo_1 = SpriteKind.create()
     export const Ojo_2 = SpriteKind.create()
 }
+scene.onOverlapTile(SpriteKind.Ojo_1, assets.tile`Derecha0`, function (sprite, location) {
+    animation.runImageAnimation(
+    Ojo_12,
+    [
+    Ojo_Derecha_1,
+    Ojo_Derecha_2,
+    Ojo_Derecha_3,
+    Ojo_Derecha_4
+    ],
+    200,
+    true
+    )
+    Ojo_12.setVelocity(50, 0)
+})
 scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Izquierda`, function (sprite, location) {
     animation.runImageAnimation(
     Esqueleto_22,
@@ -47,21 +61,30 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . 4 4 4 4 4 . . . . . . 
-        . . . 4 4 4 5 5 5 d 4 4 4 4 . . 
-        . . 4 d 5 d 5 5 5 d d d 4 4 . . 
-        . . 4 5 5 1 1 1 d d 5 5 5 4 . . 
-        . 4 5 5 5 1 1 1 5 1 1 5 5 4 4 . 
-        . 4 d d 1 1 5 5 5 1 1 5 5 d 4 . 
-        . 4 5 5 1 1 5 1 1 5 5 d d d 4 . 
-        . 2 5 5 5 d 1 1 1 5 1 1 5 5 2 . 
-        . 2 d 5 5 d 1 1 1 5 1 1 5 5 2 . 
-        . . 2 4 d d 5 5 5 5 d d 5 4 . . 
-        . . . 2 2 4 d 5 5 d d 4 4 . . . 
-        . . 2 2 2 2 2 4 4 4 2 2 2 . . . 
-        . . . 2 2 4 4 4 4 4 4 2 2 . . . 
-        . . . . . 2 2 2 2 2 2 . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
         `, Principal, 150, 0)
+    animation.runImageAnimation(
+    projectile,
+    [
+        Aire_Derecho_1,
+        Aire_Derecho_2
+    ],
+    500,
+    true
+    )
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (sprite, location) {
     game.showLongText("¿Qué palabra clave se utiliza para definir una función en Python?", DialogLayout.Bottom)
@@ -263,10 +286,10 @@ scene.onOverlapTile(SpriteKind.Ojo_1, assets.tile`Izquierda`, function (sprite, 
     animation.runImageAnimation(
     Ojo_12,
     [
-    Esqueleto_Izquierda_1,
-    Esqueleto_Izquierda_2,
-    Esqueleto_Izquierda_3,
-    Esqueleto_Izquierda_4
+    Ojo_Izquierda_1,
+    Ojo_Izquierda_2,
+    Ojo_Izquierda_3,
+    Ojo_Izquierda_4
     ],
     200,
     true
@@ -456,7 +479,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (spri
         true
         )
         Ojo_12.changeScale(1.5, ScaleAnchor.Middle)
-        Ojo_12.setPosition(140, 20)
+        Ojo_12.setPosition(170, 20)
         Ojo_12.setVelocity(50, 0)
         Ojo_22 = sprites.create(img`
             . . . . . . . . . . . . . . . . 
@@ -515,10 +538,10 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_2, function (sprit
     info.changeScoreBy(10)
 })
 let Ojo_22: Sprite = null
-let Ojo_12: Sprite = null
 let Esqueleto_52: Sprite = null
 let Esqueleto_42: Sprite = null
 let projectile: Sprite = null
+let Ojo_12: Sprite = null
 let Moneda_09: Sprite = null
 let Moneda_08: Sprite = null
 let Moneda_07: Sprite = null
