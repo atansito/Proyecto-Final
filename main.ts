@@ -78,10 +78,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `, Principal, 150, 0)
     animation.runImageAnimation(
     projectile,
-    [
-        Aire_Derecho_1,
-        Aire_Derecho_2
-    ],
+    [Aire_Derecho_1, Aire_Derecho_2],
     500,
     true
     )
