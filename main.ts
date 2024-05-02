@@ -48,6 +48,20 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_1, function (sprit
     sprites.destroy(Esqueleto_12)
     info.changeScoreBy(10)
 })
+scene.onOverlapTile(SpriteKind.Ojo_2, assets.tile`Derecha0`, function (sprite, location) {
+    animation.runImageAnimation(
+    Ojo_22,
+    [
+    Ojo_Derecha_1,
+    Ojo_Derecha_2,
+    Ojo_Derecha_3,
+    Ojo_Derecha_4
+    ],
+    200,
+    true
+    )
+    Ojo_22.setVelocity(50, 0)
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
         Principal.vy = -200
@@ -92,11 +106,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (
     if (game.askForNumber("", 1) != 3) {
         game.showLongText("Lo siento! Respuesta incorrecta, menos una vida >:)", DialogLayout.Bottom)
         info.changeLifeBy(-1)
-        Principal.setPosition(427, 54)
+        Principal.setPosition(427, 40)
     } else {
         game.showLongText("Felicidades! Respuesta correcta", DialogLayout.Bottom)
         Principal.sayText(Respuestas._pickRandom(), 5000, true)
-        Llave = true
         tiles.setTileAt(location, assets.tile`transparency16`)
         tiles.setTileAt(tiles.getTileLocation(39, 10), sprites.dungeon.chestOpen)
     }
@@ -134,6 +147,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_3, function (sprite, othe
     sprites.destroy(Moneda_03)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_5, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    Principal.setPosition(20, 130)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Ojo_2, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    Principal.setPosition(20, 130)
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Principal,
@@ -168,6 +189,10 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
     true
     )
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_4, function (sprite, otherSprite) {
+    sprites.destroy(Esqueleto_42)
+    info.changeScoreBy(10)
+})
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     animation.runImageAnimation(
     Principal,
@@ -180,6 +205,10 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
     200,
     true
     )
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Ojo_1, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    Principal.setPosition(20, 130)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_3, assets.tile`Izquierda`, function (sprite, location) {
     animation.runImageAnimation(
@@ -236,9 +265,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchDown, function
     } else {
         game.showLongText("Felicidades! Respuesta correcta", DialogLayout.Bottom)
         Principal.sayText(Respuestas._pickRandom(), 5000, true)
-        Llave = true
         tiles.setTileAt(location, assets.tile`transparency16`)
-        tiles.setTileAt(tiles.getTileLocation(0, 2), sprites.dungeon.doorOpenNorth)
+        tiles.setTileAt(tiles.getTileLocation(39, 10), sprites.dungeon.purpleSwitchUp)
     }
     animation.runImageAnimation(
     Principal,
@@ -293,6 +321,20 @@ scene.onOverlapTile(SpriteKind.Ojo_1, assets.tile`Izquierda`, function (sprite, 
     )
     Ojo_12.setVelocity(-50, 0)
 })
+scene.onOverlapTile(SpriteKind.Ojo_2, assets.tile`Izquierda`, function (sprite, location) {
+    animation.runImageAnimation(
+    Ojo_22,
+    [
+    Ojo_Izquierda_1,
+    Ojo_Izquierda_2,
+    Ojo_Izquierda_3,
+    Ojo_Izquierda_4
+    ],
+    200,
+    true
+    )
+    Ojo_22.setVelocity(-50, 0)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_9, function (sprite, otherSprite) {
     sprites.destroy(Moneda_09)
     info.changeScoreBy(1)
@@ -331,9 +373,49 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_4, function (sprite, othe
     sprites.destroy(Moneda_04)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Ojo_1, function (sprite, otherSprite) {
+    sprites.destroy(Ojo_12)
+    info.changeScoreBy(10)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Ojo_2, function (sprite, otherSprite) {
+    sprites.destroy(Ojo_22)
+    info.changeScoreBy(10)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchUp, function (sprite, location) {
+    game.showLongText("¿Qué símbolo se utiliza para comentar una línea en Python?", DialogLayout.Bottom)
+    game.showLongText("1) //", DialogLayout.Bottom)
+    game.showLongText("2) #", DialogLayout.Bottom)
+    game.showLongText("3) --", DialogLayout.Bottom)
+    game.showLongText("4) /**/", DialogLayout.Bottom)
+    if (game.askForNumber("", 1) != 2) {
+        game.showLongText("Lo siento! Respuesta incorrecta, menos una vida >:)", DialogLayout.Bottom)
+        info.changeLifeBy(-1)
+        Principal.setPosition(427, 54)
+    } else {
+        game.showLongText("Felicidades! Respuesta correcta", DialogLayout.Bottom)
+        Principal.sayText(Respuestas._pickRandom(), 5000, true)
+        tiles.setTileAt(location, assets.tile`transparency16`)
+        tiles.setTileAt(tiles.getTileLocation(0, 2), sprites.dungeon.doorOpenNorth)
+    }
+    animation.runImageAnimation(
+    Principal,
+    [
+    Quieto_Derecho_1,
+    Quieto_Derecho_2,
+    Quieto_Derecho_3,
+    Quieto_Derecho_4
+    ],
+    200,
+    true
+    )
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_2, function (sprite, otherSprite) {
     sprites.destroy(Moneda_02)
     info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_4, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    Principal.setPosition(20, 130)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -367,147 +449,152 @@ scene.onOverlapTile(SpriteKind.Esqueleto_5, assets.tile`Derecha0`, function (spr
     )
     Esqueleto_52.setVelocity(50, 0)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_5, function (sprite, otherSprite) {
+    sprites.destroy(Esqueleto_52)
+    info.changeScoreBy(10)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (sprite, location) {
-    if (Llave == true) {
-        tiles.setCurrentTilemap(tilemap`level8`)
-        Principal.setPosition(20, 130)
-        Llave = false
-        sprites.destroy(Esqueleto_12)
-        sprites.destroy(Esqueleto_22)
-        sprites.destroy(Esqueleto_32)
-        sprites.destroy(Moneda_01)
-        sprites.destroy(Moneda_02)
-        sprites.destroy(Moneda_03)
-        sprites.destroy(Moneda_04)
-        sprites.destroy(Moneda_05)
-        sprites.destroy(Moneda_06)
-        sprites.destroy(Moneda_07)
-        sprites.destroy(Moneda_08)
-        sprites.destroy(Moneda_09)
-        Esqueleto_42 = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Esqueleto_4)
-        animation.runImageAnimation(
-        Esqueleto_42,
-        [
-        Esqueleto_Derecha_1,
-        Esqueleto_Derecha_2,
-        Esqueleto_Derecha_3,
-        Esqueleto_Derecha_4
-        ],
-        200,
-        true
-        )
-        Esqueleto_42.setPosition(420, 163)
-        Esqueleto_42.setVelocity(50, 0)
-        Esqueleto_52 = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Esqueleto_5)
-        animation.runImageAnimation(
-        Esqueleto_52,
-        [
-        Esqueleto_Derecha_1,
-        Esqueleto_Derecha_2,
-        Esqueleto_Derecha_3,
-        Esqueleto_Derecha_4
-        ],
-        200,
-        true
-        )
-        Esqueleto_52.setPosition(140, 163)
-        Esqueleto_52.setVelocity(50, 0)
-        Ojo_12 = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Ojo_1)
-        animation.runImageAnimation(
-        Ojo_12,
-        [
-        Ojo_Derecha_1,
-        Ojo_Derecha_2,
-        Ojo_Derecha_3,
-        Ojo_Derecha_4
-        ],
-        200,
-        true
-        )
-        Ojo_12.changeScale(1.5, ScaleAnchor.Middle)
-        Ojo_12.setPosition(170, 20)
-        Ojo_12.setVelocity(50, 0)
-        Ojo_22 = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Ojo_2)
-        animation.runImageAnimation(
-        Ojo_22,
-        [
-        Ojo_Derecha_1,
-        Ojo_Derecha_2,
-        Ojo_Derecha_3,
-        Ojo_Derecha_4
-        ],
-        200,
-        true
-        )
-    }
+    tiles.setCurrentTilemap(tilemap`level8`)
+    Principal.setPosition(20, 130)
+    Llave = false
+    sprites.destroy(Esqueleto_12)
+    sprites.destroy(Esqueleto_22)
+    sprites.destroy(Esqueleto_32)
+    sprites.destroy(Moneda_01)
+    sprites.destroy(Moneda_02)
+    sprites.destroy(Moneda_03)
+    sprites.destroy(Moneda_04)
+    sprites.destroy(Moneda_05)
+    sprites.destroy(Moneda_06)
+    sprites.destroy(Moneda_07)
+    sprites.destroy(Moneda_08)
+    sprites.destroy(Moneda_09)
+    Esqueleto_42 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Esqueleto_4)
+    animation.runImageAnimation(
+    Esqueleto_42,
+    [
+    Esqueleto_Derecha_1,
+    Esqueleto_Derecha_2,
+    Esqueleto_Derecha_3,
+    Esqueleto_Derecha_4
+    ],
+    200,
+    true
+    )
+    Esqueleto_42.setPosition(420, 163)
+    Esqueleto_42.setVelocity(50, 0)
+    Esqueleto_52 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Esqueleto_5)
+    animation.runImageAnimation(
+    Esqueleto_52,
+    [
+    Esqueleto_Derecha_1,
+    Esqueleto_Derecha_2,
+    Esqueleto_Derecha_3,
+    Esqueleto_Derecha_4
+    ],
+    200,
+    true
+    )
+    Esqueleto_52.setPosition(140, 163)
+    Esqueleto_52.setVelocity(50, 0)
+    Ojo_12 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Ojo_1)
+    animation.runImageAnimation(
+    Ojo_12,
+    [
+    Ojo_Derecha_1,
+    Ojo_Derecha_2,
+    Ojo_Derecha_3,
+    Ojo_Derecha_4
+    ],
+    200,
+    true
+    )
+    Ojo_12.changeScale(1.5, ScaleAnchor.Middle)
+    Ojo_12.setPosition(170, 28)
+    Ojo_12.setVelocity(50, 0)
+    Ojo_22 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Ojo_2)
+    animation.runImageAnimation(
+    Ojo_22,
+    [
+    Ojo_Derecha_1,
+    Ojo_Derecha_2,
+    Ojo_Derecha_3,
+    Ojo_Derecha_4
+    ],
+    200,
+    true
+    )
+    Ojo_22.changeScale(1.5, ScaleAnchor.Middle)
+    Ojo_22.setPosition(380, 44)
+    Ojo_22.setVelocity(50, 0)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -534,10 +621,11 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_2, function (sprit
     sprites.destroy(Esqueleto_22)
     info.changeScoreBy(10)
 })
-let Ojo_22: Sprite = null
+let Llave = false
 let Esqueleto_52: Sprite = null
 let Esqueleto_42: Sprite = null
 let projectile: Sprite = null
+let Ojo_22: Sprite = null
 let Ojo_12: Sprite = null
 let Moneda_09: Sprite = null
 let Moneda_08: Sprite = null
@@ -553,8 +641,6 @@ let Esqueleto_22: Sprite = null
 let Esqueleto_12: Sprite = null
 let Principal: Sprite = null
 let Respuestas: string[] = []
-let Llave = false
-Llave = false
 Respuestas = [
 "¡Oh, acerté! ¿Algún desafío real después de esto?",
 "¿Correcto? ¡Por supuesto! ¿Qué esperabas?",
