@@ -15,6 +15,17 @@ namespace SpriteKind {
     export const Esqueleto_5 = SpriteKind.create()
     export const Ojo_1 = SpriteKind.create()
     export const Ojo_2 = SpriteKind.create()
+    export const Moneda_10 = SpriteKind.create()
+    export const Moneda_11 = SpriteKind.create()
+    export const Moneda_12 = SpriteKind.create()
+    export const Moneda_13 = SpriteKind.create()
+    export const Moneda_14 = SpriteKind.create()
+    export const Moneda_15 = SpriteKind.create()
+    export const Moneda_16 = SpriteKind.create()
+    export const Moneda_17 = SpriteKind.create()
+    export const Moneda_18 = SpriteKind.create()
+    export const Moneda_19 = SpriteKind.create()
+    export const Moneda_20 = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Ojo_1, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -44,6 +55,10 @@ scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Izquierda`, function (sp
     )
     Esqueleto_22.setVelocity(-50, 0)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_15, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_15)
+    info.changeScoreBy(1)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_12)
     info.changeScoreBy(10)
@@ -61,6 +76,10 @@ scene.onOverlapTile(SpriteKind.Ojo_2, assets.tile`Derecha0`, function (sprite, l
     true
     )
     Ojo_22.setVelocity(50, 0)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_12, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_12)
+    info.changeScoreBy(1)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
@@ -139,6 +158,10 @@ scene.onOverlapTile(SpriteKind.Esqueleto_4, assets.tile`Izquierda`, function (sp
     )
     Esqueleto_42.setVelocity(-50, 0)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_17, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_17)
+    info.changeScoreBy(1)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_3, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_32)
     info.changeScoreBy(10)
@@ -193,6 +216,10 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_4, function (sprit
     sprites.destroy(Esqueleto_42)
     info.changeScoreBy(10)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_10, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_10)
+    info.changeScoreBy(1)
+})
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     animation.runImageAnimation(
     Principal,
@@ -223,6 +250,14 @@ scene.onOverlapTile(SpriteKind.Esqueleto_3, assets.tile`Izquierda`, function (sp
     true
     )
     Esqueleto_32.setVelocity(-50, 0)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_19, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_19)
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_18, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_18)
+    info.changeScoreBy(1)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_3, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -365,6 +400,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_5, function (sprite, othe
     sprites.destroy(Moneda_05)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_14, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_14)
+    info.changeScoreBy(1)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_2, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
@@ -409,6 +448,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchUp, function 
     true
     )
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_13, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_13)
+    info.changeScoreBy(1)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_2, function (sprite, otherSprite) {
     sprites.destroy(Moneda_02)
     info.changeScoreBy(1)
@@ -448,6 +491,14 @@ scene.onOverlapTile(SpriteKind.Esqueleto_5, assets.tile`Derecha0`, function (spr
     true
     )
     Esqueleto_52.setVelocity(50, 0)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_20, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_20)
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_11, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_11)
+    info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_5, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_52)
@@ -595,6 +646,336 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (spri
     Ojo_22.changeScale(1.5, ScaleAnchor.Middle)
     Ojo_22.setPosition(380, 44)
     Ojo_22.setVelocity(50, 0)
+    Moneda_10 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_10)
+    animation.runImageAnimation(
+    Moneda_10,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_10.setPosition(60, 39)
+    Moneda_11 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_11)
+    animation.runImageAnimation(
+    Moneda_11,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_11.setPosition(90, 39)
+    Moneda_12 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_12)
+    animation.runImageAnimation(
+    Moneda_12,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_12.setPosition(120, 39)
+    Moneda_13 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_13)
+    animation.runImageAnimation(
+    Moneda_13,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_13.setPosition(217, 73)
+    Moneda_14 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_14)
+    animation.runImageAnimation(
+    Moneda_14,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_14.setPosition(237, 73)
+    Moneda_15 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_15)
+    animation.runImageAnimation(
+    Moneda_15,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_15.setPosition(328, 105)
+    Moneda_16 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_16)
+    animation.runImageAnimation(
+    Moneda_16,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_16.setPosition(348, 105)
+    Moneda_17 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_17)
+    animation.runImageAnimation(
+    Moneda_17,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_17.setPosition(426, 57)
+    Moneda_18 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_18)
+    animation.runImageAnimation(
+    Moneda_18,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_18.setPosition(426, 169)
+    Moneda_19 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_19)
+    animation.runImageAnimation(
+    Moneda_19,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_19.setPosition(456, 169)
+    Moneda_20 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Moneda_20)
+    animation.runImageAnimation(
+    Moneda_20,
+    [
+    Moneda_1,
+    Moneda_2,
+    Moneda_3,
+    Moneda_4
+    ],
+    100,
+    true
+    )
+    Moneda_20.setPosition(486, 169)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -617,15 +998,30 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, othe
     sprites.destroy(Moneda_06)
     info.changeScoreBy(1)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_16, function (sprite, otherSprite) {
+    sprites.destroy(Moneda_16)
+    info.changeScoreBy(1)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_2, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_22)
     info.changeScoreBy(10)
 })
+let Moneda_16: Sprite = null
 let Llave = false
+let Moneda_11: Sprite = null
+let Moneda_20: Sprite = null
+let Moneda_13: Sprite = null
+let Moneda_14: Sprite = null
 let Esqueleto_52: Sprite = null
+let Moneda_18: Sprite = null
+let Moneda_19: Sprite = null
+let Moneda_10: Sprite = null
+let Moneda_17: Sprite = null
 let Esqueleto_42: Sprite = null
 let projectile: Sprite = null
+let Moneda_12: Sprite = null
 let Ojo_22: Sprite = null
+let Moneda_15: Sprite = null
 let Ojo_12: Sprite = null
 let Moneda_09: Sprite = null
 let Moneda_08: Sprite = null
