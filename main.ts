@@ -1027,7 +1027,6 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (
     music.stopAllSounds()
     game.gameOver(true)
     music.play(music.stringPlayable("F G A C5 C5 A C5 C5 ", 320), music.PlaybackMode.UntilDone)
-    game.splash("Gracias por jugar!!")
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, otherSprite) {
     sprites.destroy(Moneda_06)
