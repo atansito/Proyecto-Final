@@ -58,6 +58,7 @@ scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Izquierda`, function (sp
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_15, function (sprite, otherSprite) {
     sprites.destroy(Moneda_15)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_12)
@@ -80,6 +81,7 @@ scene.onOverlapTile(SpriteKind.Ojo_2, assets.tile`Derecha0`, function (sprite, l
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_12, function (sprite, otherSprite) {
     sprites.destroy(Moneda_12)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Principal.isHittingTile(CollisionDirection.Bottom)) {
@@ -161,6 +163,7 @@ scene.onOverlapTile(SpriteKind.Esqueleto_4, assets.tile`Izquierda`, function (sp
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_17, function (sprite, otherSprite) {
     sprites.destroy(Moneda_17)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_3, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_32)
@@ -169,6 +172,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_3, function (sprit
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_3, function (sprite, otherSprite) {
     sprites.destroy(Moneda_03)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_5, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
@@ -194,6 +198,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_7, function (sprite, otherSprite) {
     sprites.destroy(Moneda_07)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
@@ -219,6 +224,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_4, function (sprit
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_10, function (sprite, otherSprite) {
     sprites.destroy(Moneda_10)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     animation.runImageAnimation(
@@ -254,10 +260,12 @@ scene.onOverlapTile(SpriteKind.Esqueleto_3, assets.tile`Izquierda`, function (sp
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_19, function (sprite, otherSprite) {
     sprites.destroy(Moneda_19)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_18, function (sprite, otherSprite) {
     sprites.destroy(Moneda_18)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_3, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -373,10 +381,12 @@ scene.onOverlapTile(SpriteKind.Ojo_2, assets.tile`Izquierda`, function (sprite, 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_9, function (sprite, otherSprite) {
     sprites.destroy(Moneda_09)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_1, function (sprite, otherSprite) {
     sprites.destroy(Moneda_01)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_4, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -399,10 +409,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_3, function (sprite, o
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_5, function (sprite, otherSprite) {
     sprites.destroy(Moneda_05)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_14, function (sprite, otherSprite) {
     sprites.destroy(Moneda_14)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_2, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
@@ -411,6 +423,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_2, function (sprite, o
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_4, function (sprite, otherSprite) {
     sprites.destroy(Moneda_04)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Ojo_1, function (sprite, otherSprite) {
     sprites.destroy(Ojo_12)
@@ -451,10 +464,12 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchUp, function 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_13, function (sprite, otherSprite) {
     sprites.destroy(Moneda_13)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_2, function (sprite, otherSprite) {
     sprites.destroy(Moneda_02)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_4, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
@@ -477,6 +492,7 @@ scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Derecha0`, function (spr
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_8, function (sprite, otherSprite) {
     sprites.destroy(Moneda_08)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_5, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -495,10 +511,12 @@ scene.onOverlapTile(SpriteKind.Esqueleto_5, assets.tile`Derecha0`, function (spr
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_20, function (sprite, otherSprite) {
     sprites.destroy(Moneda_20)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_11, function (sprite, otherSprite) {
     sprites.destroy(Moneda_11)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_5, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_52)
@@ -999,10 +1017,12 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, otherSprite) {
     sprites.destroy(Moneda_06)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_16, function (sprite, otherSprite) {
     sprites.destroy(Moneda_16)
     info.changeScoreBy(1)
+    music.play(music.stringPlayable("B C5 - - - - - - ", 1000), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_2, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_22)
