@@ -1486,3 +1486,9 @@ true
 )
 Moneda_09.setPosition(457, 40)
 music.play(music.createSong(assets.song`Musica Predeterminada`), music.PlaybackMode.LoopingInBackground)
+game.onUpdateInterval(10, function () {
+    if (info.life() == 0) {
+        music.stopAllSounds()
+        game.gameOver(false)
+    }
+})
