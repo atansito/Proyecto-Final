@@ -992,7 +992,9 @@ scene.onOverlapTile(SpriteKind.Esqueleto_1, assets.tile`Derecha0`, function (spr
     Esqueleto_12.setVelocity(50, 0)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
+    music.stopAllSounds()
     game.gameOver(true)
+    music.play(music.stringPlayable("F G A C5 C5 A C5 C5 ", 320), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_6, function (sprite, otherSprite) {
     sprites.destroy(Moneda_06)
@@ -1448,3 +1450,4 @@ Moneda_4
 true
 )
 Moneda_09.setPosition(457, 40)
+music.play(music.createSong(assets.song`Musica Predeterminada`), music.PlaybackMode.LoopingInBackground)

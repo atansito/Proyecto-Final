@@ -63,7 +63,9 @@
         "Ojo_Izquierda_3.ts",
         "Ojo_Izquierda_4.ts",
         "Disparo_1.ts",
-        "Disparo_2.ts"
+        "Disparo_2.ts",
+        "images.g.jres",
+        "images.g.ts"
     ],
     "testFiles": [
         "test.ts"
