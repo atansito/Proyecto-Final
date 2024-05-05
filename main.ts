@@ -63,6 +63,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_15, function (sprite, oth
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_12)
     info.changeScoreBy(10)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Ojo_2, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -117,6 +118,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     500,
     true
     )
+    music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (sprite, location) {
     game.showLongText("¿Qué palabra clave se utiliza para definir una función en Python?", DialogLayout.Bottom)
@@ -168,6 +170,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_17, function (sprite, oth
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_3, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_32)
     info.changeScoreBy(10)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_3, function (sprite, otherSprite) {
     sprites.destroy(Moneda_03)
@@ -177,10 +180,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_3, function (sprite, othe
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_5, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Ojo_2, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -203,6 +208,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_7, function (sprite, othe
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_1, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     animation.runImageAnimation(
@@ -220,6 +226,7 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_4, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_42)
     info.changeScoreBy(10)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_10, function (sprite, otherSprite) {
     sprites.destroy(Moneda_10)
@@ -242,6 +249,7 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Ojo_1, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_3, assets.tile`Izquierda`, function (sprite, location) {
     animation.runImageAnimation(
@@ -304,7 +312,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchDown, function
     if (game.askForNumber("", 1) != 1) {
         game.showLongText("Lo siento! Respuesta incorrecta, menos una vida >:)", DialogLayout.Bottom)
         info.changeLifeBy(-1)
-        Principal.setPosition(427, 54)
+        Principal.setPosition(590, 41)
     } else {
         game.showLongText("Felicidades! Respuesta correcta", DialogLayout.Bottom)
         Principal.sayText(Respuestas._pickRandom(), 5000, true)
@@ -405,6 +413,7 @@ scene.onOverlapTile(SpriteKind.Esqueleto_4, assets.tile`Derecha0`, function (spr
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_3, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_5, function (sprite, otherSprite) {
     sprites.destroy(Moneda_05)
@@ -419,6 +428,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_14, function (sprite, oth
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_2, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_4, function (sprite, otherSprite) {
     sprites.destroy(Moneda_04)
@@ -428,10 +438,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_4, function (sprite, othe
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Ojo_1, function (sprite, otherSprite) {
     sprites.destroy(Ojo_12)
     info.changeScoreBy(10)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Ojo_2, function (sprite, otherSprite) {
     sprites.destroy(Ojo_22)
     info.changeScoreBy(10)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchUp, function (sprite, location) {
     game.showLongText("¿Qué símbolo se utiliza para comentar una línea en Python?", DialogLayout.Bottom)
@@ -442,7 +454,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.purpleSwitchUp, function 
     if (game.askForNumber("", 1) != 2) {
         game.showLongText("Lo siento! Respuesta incorrecta, menos una vida >:)", DialogLayout.Bottom)
         info.changeLifeBy(-1)
-        Principal.setPosition(427, 54)
+        Principal.setPosition(600, 163)
     } else {
         game.showLongText("Felicidades! Respuesta correcta", DialogLayout.Bottom)
         Principal.sayText(Respuestas._pickRandom(), 5000, true)
@@ -474,6 +486,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_2, function (sprite, othe
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Esqueleto_4, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Principal.setPosition(20, 130)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Esqueleto_2, assets.tile`Derecha0`, function (sprite, location) {
     animation.runImageAnimation(
@@ -521,6 +534,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_11, function (sprite, oth
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_5, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_52)
     info.changeScoreBy(10)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level8`)
@@ -1027,6 +1041,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Moneda_16, function (sprite, oth
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Esqueleto_2, function (sprite, otherSprite) {
     sprites.destroy(Esqueleto_22)
     info.changeScoreBy(10)
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
 })
 let Moneda_16: Sprite = null
 let Llave = false
