@@ -1074,6 +1074,7 @@ let Esqueleto_22: Sprite = null
 let Esqueleto_12: Sprite = null
 let Principal: Sprite = null
 let Respuestas: string[] = []
+game.splash("The Python King", "By S&M Productions")
 Respuestas = [
 "¡Oh, acerté! ¿Algún desafío real después de esto?",
 "¿Correcto? ¡Por supuesto! ¿Qué esperabas?",
